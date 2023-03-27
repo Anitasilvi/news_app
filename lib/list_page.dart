@@ -17,7 +17,7 @@ class NewsListPage extends StatelessWidget {
         future:
             DefaultAssetBundle.of(context).loadString('assets/articles.json'),
         builder: (context, snapshot) {
-          final List articles = parseArticles(snapshot.data);
+          final List<Article> articles = parseArticles(snapshot.data);
           return ListView.builder(
             itemCount: articles.length,
             itemBuilder: (context, index) {
@@ -29,7 +29,7 @@ class NewsListPage extends StatelessWidget {
     );
   }
 
-  List parseArticles(String? json) {
+  List<Article> parseArticles(String? json) {
     if (json == null) {
       return [];
     }

@@ -1,5 +1,3 @@
-import 'package:client_server/article.dart';
-
 class Article {
   late String author;
   late String title;
@@ -19,5 +17,13 @@ class Article {
     required this.content,
   });
 
-  static fromJson(json) {}
+  Article.fromJson(Map<String, dynamic> jsonMap) {
+    author = jsonMap['author'];
+    title = jsonMap['title'];
+    description = jsonMap['description'];
+    url = jsonMap['url'];
+    urlToImage = jsonMap['urlToImage'];
+    publishedAt = jsonMap['publishedAt'];
+    content = jsonMap['content'];
+  }
 }

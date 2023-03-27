@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:client_server/web_view.dart';
 
-class ArticleWebView extends StatelessWidget {
+import 'package:webview_flutter/webview_flutter.dart';
+class ArticleWebView extends StatelessWidget 
+{
   static const routeName = '/article_web';
 
   final String url;
@@ -18,6 +20,4 @@ class ArticleWebView extends StatelessWidget {
       ),
     );
   }
-
-  WebView({required String initialUrl}) {}
 }
