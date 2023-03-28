@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:client_server/web_view.dart';
-
 import 'package:webview_flutter/webview_flutter.dart';
-class ArticleWebView extends StatelessWidget 
-{
-  static const routeName = '/article_web';
+import 'package:flutter/cupertino.dart';
 
+class ArticleWebView extends StatelessWidget {
   final String url;
-  const ArticleWebView({required this.url});
+
+  ArticleWebView({required this.url});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext coext) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('News App'),
-      ),
+      appBar: AppBar(title: Text('Article')),
       body: WebView(
         initialUrl: url,
+        javascriptMode: JavascriptMode.unrestricted,
       ),
     );
   }
